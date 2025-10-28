@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Syllabus</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+           <span class="logo-icon"><img src="images/logo.png" alt="Logo Icon"></span>
+        </div>
+         <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item ">
+                <span class="icon">
+                <img src="images/dashboard.png" alt="Dashboard Icon">
+                </span>
+            </a>
+            <a href="upload.html" class="nav-item active">
+                <span class="icon">
+                <img src="images/upload.png" alt="Upload Icon">
+                </span>
+            </a>
+            <a href="tracking.html" class="nav-item">
+                <span class="icon">
+                <img src="images/tracking.png" alt="Tracking Icon">
+                </span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <span class="icon">
+                <img src="images/notification.png" alt="Notifications Icon">
+                </span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="icon">
+                <img src="images/settings.png" alt="Settings Icon">
+                </span>
+            </a>
+            </nav>
+        <div class="nav-bottom">
+            <a href="../auth/login.html" class="nav-item" id="logoutBtn">
+                <span class="icon">
+                <img src="images/logout.png" alt="Settings Icon">
+                </span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." id="searchInput">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="header-right">
+                <div class="date-display">
+                    <span class="icon">📅</span>
+                    <span id="currentDate"></span>
+                </div>
+                <button class="icon-btn" id="notifBtn">
+                     <span class="icon"><img src="images/notification.png"></span>
+                    <span class="badge" id="notifBadge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=5fa89a&color=fff" alt="User" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name" id="userName">Faculty User</span>
+                        <span class="user-role">Executive Manager</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Upload Content -->
+        <div class="dashboard-content">
+            <h1 class="page-title">Upload Syllabus</h1>
+
+            <div class="upload-container">
+                <div class="upload-card">
+                    <div class="upload-icon"><img src="images/upload.png" alt="Upload Icon"></div>
+                    <h3>Upload Your Syllabus PDF</h3>
+                    <p class="upload-description">Drop your PDF file here or click to browse</p>
+                    
+                    <div class="drop-zone" id="dropZone">
+                        <input type="file" id="fileInput" accept=".pdf" hidden>
+                        <div class="drop-zone-content">
+                            <span class="upload-emoji">📄</span>
+                            <p>Drag & drop your PDF here</p>
+                            <button class="browse-btn" id="browseBtn">Browse Files</button>
+                        </div>
+                    </div>
+
+                    <div id="filePreview" class="file-preview" style="display: none;">
+                        <div class="file-info">
+                            <span class="file-icon">📄</span>
+                            <div class="file-details">
+                                <p class="file-name" id="fileName"></p>
+                                <p class="file-size" id="fileSize"></p>
+                            </div>
+                            <button class="remove-btn" id="removeBtn">✕</button>
+                        </div>
+                    </div>
+
+                    <form id="uploadForm">
+                        <div class="form-group">
+                            <label for="courseCode">Course Code</label>
+                            <input type="text" id="courseCode" placeholder="e.g., CS 101" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="courseName">Course Name</label>
+                            <input type="text" id="courseName" placeholder="e.g., Introduction to Programming" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <select id="semester" required>
+                                <option value="">Select Semester</option>
+                                <option value="1st">1st Semester</option>
+                                <option value="2nd">2nd Semester</option>
+                                <option value="Summer">Summer</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="academicYear">Academic Year</label>
+                            <input type="text" id="academicYear" placeholder="e.g., 2024-2025" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Additional Notes (Optional)</label>
+                            <textarea id="notes" rows="3" placeholder="Any additional information..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="icon"><img src="images/upload.png" alt="Upload Icon"></span>
+                            Submit Syllabus
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Recent Uploads -->
+                <div class="recent-uploads">
+                    <h3>Recent Uploads</h3>
+                    <div class="upload-list" id="uploadList">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="upload.js"></script>
+</body>
+</html>

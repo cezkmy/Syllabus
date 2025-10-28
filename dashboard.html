@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Syllabus Management</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+          <span class="logo-icon"><img src="images/logo.png" alt="Logo Icon"></span>
+
+        </div>
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item active">
+                <span class="icon">
+                <img src="images/dashboard.png" alt="Dashboard Icon">
+                </span>
+            </a>
+            <a href="upload.html" class="nav-item">
+                <span class="icon">
+                <img src="images/upload.png" alt="Upload Icon">
+                </span>
+            </a>
+            <a href="tracking.html" class="nav-item">
+                <span class="icon">
+                <img src="images/tracking.png" alt="Tracking Icon">
+                </span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <span class="icon">
+                <img src="images/notification.png" alt="Notifications Icon">
+                </span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span class="icon">
+                <img src="images/settings.png" alt="Settings Icon">
+                </span>
+            </a>
+            </nav>
+
+        <div class="nav-bottom">
+            <a href="../auth/login.html" class="nav-item" id="logoutBtn">
+                <span class="icon">
+                <img src="images/logout.png" alt="Settings Icon">
+                </span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." id="searchInput">
+                <span class="search-icon"><img src="images/search.png" alt="Search Icon"></span>
+            </div>
+            <div class="header-right">
+                <div class="date-display">
+                    <span class="icon">📅</span>
+                    <span id="currentDate"></span>
+                </div>
+                <button class="icon-btn" id="notifBtn">
+                    <span class="icon"><img src="images/notification.png"></span>
+                    <span class="badge" id="notifBadge">3</span>
+                </button>
+
+                <div class="user-profile">
+                    <img src="images/animal.png" alt="User" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name" id="userName">Faculty User</span>
+                        <span class="user-role">IT Department</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <h1 class="page-title">Dashboard</h1>
+
+            <div class="main-grid">
+                <!-- Welcome Card -->
+                <div class="welcome-card">
+                    <div class="welcome-text">
+                        <h2 id="greeting">Hi, User!</h2>
+                        <p class="subtitle">What are we doing today?</p>
+                        <div class="quick-actions">
+                            <a href="upload.html" class="action-btn">
+                               <span class="icon"><img src="images/upload.png" alt="Upload Icon"></span> Upload Syllabus
+                            </a>
+                            <a href="tracking.html" class="action-btn">
+                                <span class="icon"><img src="images/tracking.png" alt="Track Icon"></span> Track Status
+                            </a>
+                            <a href="notifications.html" class="action-btn">
+                                <span class="icon"><img src="images/notification.png" alt="Notification Icon"></span> View Notifications
+                            </a>
+                            <a href="settings.html" class="action-btn">
+                                <span class="icon"><img src="images/settings.png" alt="Settings Icon"></span> Settings
+                            </a>
+                        </div>
+                    </div>
+                    <div class="welcome-illustration">
+                        <div class="bear-icon">🐻</div>
+                    </div>
+                </div>
+
+                <!-- Notifications Panel -->
+                <div class="notifications-panel">
+                    <div class="panel-header">
+                        <span class="icon"><img src="images/notification.png" alt="Notification Icon"></span>
+                        <h3>Notifications</h3>
+                        <a href="notifications.html" class="see-all">See all</a>
+                    </div>
+                    <div class="notification-list">
+                        <div class="notification-item">
+                            <div class="notif-icon yellow">📄</div>
+                            <div class="notif-content">
+                                <p class="notif-text">Your syllabus has been approved</p>
+                                <span class="notif-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notif-icon red">↩️</div>
+                            <div class="notif-content">
+                                <p class="notif-text">Syllabus returned for improvement</p>
+                                <span class="notif-time">5 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notif-icon blue">✓</div>
+                            <div class="notif-content">
+                                <p class="notif-text">Admin reviewed your submission</p>
+                                <span class="notif-time">1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon red">📄</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Total Syllabi</p>
+                        <h3 class="stat-value">12</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue">✓</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Approved</p>
+                        <h3 class="stat-value">8</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon yellow">⏳</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Pending Review</p>
+                        <h3 class="stat-value">3</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">↩️</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Needs Revision</p>
+                        <h3 class="stat-value">1</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

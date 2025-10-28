@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="notifications.css">
+</head>
+<body>
+    <!-- Sidebar -->
+       <aside class="sidebar">
+        <div class="logo">
+          <span class="logo-icon"><img src="images/logo.png" alt="Logo Icon"></span>
+
+        </div>
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item ">
+                <span class="icon">
+                <img src="images/dashboard.png" alt="Dashboard Icon">
+                </span>
+            </a>
+            <a href="upload.html" class="nav-item">
+                <span class="icon">
+                <img src="images/upload.png" alt="Upload Icon">
+                </span>
+            </a>
+            <a href="tracking.html" class="nav-item">
+                <span class="icon">
+                <img src="images/tracking.png" alt="Tracking Icon">
+                </span>
+            </a>
+            <a href="notifications.html" class="nav-item active">
+                <span class="icon">
+                <img src="images/notification.png" alt="Notifications Icon">
+                </span>
+            </a>
+            <a href="settings.html" class="nav-item ">
+                <span class="icon">
+                <img src="images/settings.png" alt="Settings Icon">
+                </span>
+            </a>
+            </nav>
+
+        <div class="nav-bottom">
+            <a href="../auth/login.html" class="nav-item" id="logoutBtn">
+                <span class="icon">
+                <img src="images/logout.png" alt="Settings Icon">
+                </span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search notifications..." id="searchInput">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="header-right">
+                <div class="date-display">
+                    <span class="icon">📅</span>
+                    <span id="currentDate"></span>
+                </div>
+                <button class="icon-btn" id="notifBtn">
+                     <span class="icon"><img src="images/notification.png"></span>
+                    <span class="badge" id="notifBadge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=5fa89a&color=fff" alt="User" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name" id="userName">Faculty User</span>
+                        <span class="user-role">Executive Manager</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Notifications Content -->
+        <div class="dashboard-content">
+            <div class="notifications-header">
+                <h1 class="page-title">Notifications</h1>
+                <button class="mark-read-btn" id="markAllRead">Mark all as read</button>
+            </div>
+
+            <!-- Notifications List -->
+            <div class="notifications-container">
+                <div class="notification-card unread" data-type="approved">
+                    <div class="notif-icon-large green">✓</div>
+                    <div class="notif-content-full">
+                        <h3>Syllabus Approved</h3>
+                        <p>Your syllabus for <strong>CS 101 - Introduction to Programming</strong> has been approved by Dr. Smith.</p>
+                        <div class="notif-meta">
+                            <span class="notif-time">2 hours ago</span>
+                            <a href="tracking.html" class="notif-action">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-card unread" data-type="returned">
+                    <div class="notif-icon-large red">↩️</div>
+                    <div class="notif-content-full">
+                        <h3>Syllabus Returned for Improvement</h3>
+                        <p>Your syllabus for <strong>CS 201 - Data Structures</strong> needs revision. Dr. Johnson commented: "Please add more detailed learning outcomes."</p>
+                        <div class="notif-meta">
+                            <span class="notif-time">5 hours ago</span>
+                            <a href="upload.html" class="notif-action">Revise Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-card unread" data-type="review">
+                    <div class="notif-icon-large blue">👁️</div>
+                    <div class="notif-content-full">
+                        <h3>Syllabus Under Review</h3>
+                        <p>Your syllabus for <strong>CS 301 - Algorithms</strong> is currently being reviewed by the admin team.</p>
+                        <div class="notif-meta">
+                            <span class="notif-time">1 day ago</span>
+                            <a href="tracking.html" class="notif-action">Track Status</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-card" data-type="reminder">
+                    <div class="notif-icon-large yellow">⚠️</div>
+                    <div class="notif-content-full">
+                        <h3>Submission Deadline Reminder</h3>
+                        <p>You have <strong>3 pending syllabi</strong> that need to be submitted by the end of this week.</p>
+                        <div class="notif-meta">
+                            <span class="notif-time">2 days ago</span>
+                            <a href="upload.html" class="notif-action">Upload Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-card" data-type="info">
+                    <div class="notif-icon-large purple">ℹ️</div>
+                    <div class="notif-content-full">
+                        <h3>System Update</h3>
+                        <p>New features have been added to the syllabus management system. Check out the improved tracking dashboard.</p>
+                        <div class="notif-meta">
+                            <span class="notif-time">3 days ago</span>
+                            <a href="tracking.html" class="notif-action">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-card" data-type="approved">
+                    <div class="notif-icon-large green">✓</div>
+                    <div class="notif-content-full">
+                        <h3>Syllabus Approved</h3>
+                        <p>Your syllabus for <strong>CS 102 - Programming II</strong> has been approved by Dr. Williams.</p>
+                        <div class="notif-meta">
+                            <span class="notif-time">1 week ago</span>
+                            <a href="tracking.html" class="notif-action">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="notifications.js"></script>
+</body>
+</html>

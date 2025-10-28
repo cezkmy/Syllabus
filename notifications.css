@@ -1,0 +1,250 @@
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.notifications-header img {
+  width: 20px;          /* 🔹 make smaller/larger as needed */
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.header-right .icon img {
+  width: 20px;          /* 🔹 make smaller/larger as needed */
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+
+
+.nav-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-item {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-item .icon {
+    font-size: 24px;
+}
+
+.nav-item:hover {
+    background: #f0f4ff;
+}
+
+.nav-item.active {
+    background: #bdeae1;
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    width: 4px;
+    height: 30px;
+    background: #5fa89a;
+    border-radius: 0 4px 4px 0;
+}
+
+.nav-bottom {
+    margin-top: auto;
+}
+
+.nav-item .icon img {
+  width: 26px;            /* icon size */
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+.mark-read-btn {
+    padding: 12px 24px;
+    background: white;
+    border: 1px solid #e0e5f0;
+    border-radius: 10px;
+    color: #5fa89a;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mark-read-btn:hover {
+    background: #5fa89a;
+    color: white;
+    border-color: #5fa89a;
+}
+
+.notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notification-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+}
+
+.notification-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.notification-card.unread {
+    background: #f8f9ff;
+    border-left-color: #5fa89a;
+}
+
+.notif-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+.notif-content-full {
+    flex: 1;
+}
+
+.notif-content-full h3 {
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.notif-content-full p {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.notif-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notif-time {
+    font-size: 13px;
+    color: #a0aec0;
+}
+
+.notif-action {
+    font-size: 14px;
+    color: #94ebd9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.notif-action:hover {
+    color: #7bd9c574;
+    text-decoration: underline;
+}
+
+/* Empty state */
+.empty-notifications {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.empty-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-notifications h3 {
+    font-size: 24px;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.empty-notifications p {
+    color: #a0aec0;
+    font-size: 16px;
+}
+
+/* Notification types indicator */
+.notification-card::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.notification-card.unread::after {
+    opacity: 1;
+    background: #5fa89a;
+}
+
+@media (max-width: 768px) {
+    .notifications-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .mark-read-btn {
+        width: 100%;
+    }
+    
+    .notification-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .notif-icon-large {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .notif-content-full h3 {
+        font-size: 16px;
+    }
+    
+    .notif-content-full p {
+        font-size: 13px;
+    }
+    
+    .notif-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

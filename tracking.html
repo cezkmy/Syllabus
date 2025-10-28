@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Syllabi</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="tracking.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon"><img src="images/logo.png" alt="Logo Icon"></span>
+        </div>
+         <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item ">
+                <span class="icon">
+                <img src="images/dashboard.png" alt="Dashboard Icon">
+                </span>
+            </a>
+            <a href="upload.html" class="nav-item">
+                <span class="icon">
+                <img src="images/upload.png" alt="Upload Icon">
+                </span>
+            </a>
+            <a href="tracking.html" class="nav-item active">
+                <span class="icon">
+                <img src="images/tracking.png" alt="Tracking Icon">
+                </span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <span class="icon">
+                <img src="images/notification.png" alt="Notifications Icon">
+                </span>
+            </a>
+            <a href="settings.html" class="nav-item ">
+                <span class="icon">
+                <img src="images/settings.png" alt="Settings Icon">
+                </span>
+            </a>
+            </nav>
+        <div class="nav-bottom">
+            <a href="../auth/login.html" class="nav-item" id="logoutBtn">
+                <span class="icon">
+                <img src="images/logout.png" alt="Settings Icon">
+                </span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search syllabi..." id="searchInput">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="header-right">
+                <div class="date-display">
+                    <span class="icon">📅</span>
+                    <span id="currentDate"></span>
+                </div>
+                <button class="icon-btn" id="notifBtn">
+                     <span class="icon"><img src="images/notification.png"></span>
+                    <span class="badge" id="notifBadge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="images/user.png" alt="User" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name" id="userName">Faculty User</span>
+                        <span class="user-role">Executive Manager</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tracking Content -->
+        <div class="dashboard-content">
+            <h1 class="page-title">Track Syllabi</h1>
+
+            <!-- Filter tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="pending">Pending</button>
+                <button class="filter-tab" data-filter="approved">Approved</button>
+                <button class="filter-tab" data-filter="returned">Returned</button>
+            </div>
+
+            <!-- Syllabi Table -->
+            <div class="table-container">
+                <table class="syllabi-table">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Semester</th>
+                            <th>Upload Date</th>
+                            <th>Status</th>
+                            <th>Reviewed By</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="syllabiTableBody">
+                        <!-- Will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for details -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Syllabus Details</h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="tracking.js"></script>
+</body>
+</html>

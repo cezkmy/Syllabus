@@ -1,0 +1,266 @@
+.filter-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-tab {
+    padding: 12px 24px;
+    background: white;
+    border: 1px solid #e0e5f0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3748;
+    transition: all 0.3s;
+}
+
+.filter-tab:hover {
+    background: #f5f7fb;
+}
+
+.filter-tab.active {
+    background: #5fa89a;
+    color: white;
+    border-color: #5fa89a;
+}
+
+.table-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+}
+
+.syllabi-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.syllabi-table thead {
+    background: #f5f7fb;
+}
+
+.syllabi-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.syllabi-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.syllabi-table tbody tr {
+    transition: all 0.3s;
+}
+
+.syllabi-table tbody tr:hover {
+    background: #f5f7fb;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.pending {
+    background: #fef3cd;
+    color: #f59e0b;
+}
+
+.status-badge.approved {
+    background: #d1fae5;
+    color: #10b981;
+}
+
+.status-badge.returned {
+    background: #fee;
+    color: #ff6b6b;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reviewer-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+}
+
+.reviewer-name {
+    font-size: 13px;
+    color: #2d3748;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.action-btn.view {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+.action-btn.view:hover {
+    background: #0284c7;
+    color: white;
+}
+
+.action-btn.download {
+    background: #d1fae5;
+    color: #10b981;
+}
+
+.action-btn.download:hover {
+    background: #10b981;
+    color: white;
+}
+
+.action-btn.edit {
+    background: #fef3cd;
+    color: #f59e0b;
+}
+
+.action-btn.edit:hover {
+    background: #f59e0b;
+    color: white;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: slideDown 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #2d3748;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #2d3748;
+}
+
+.detail-row {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-label {
+    font-weight: 600;
+    width: 150px;
+    color: #2d3748;
+}
+
+.detail-value {
+    flex: 1;
+    color: #718096;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #a0aec0;
+}
+
+.empty-state-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .filter-tabs {
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .table-container {
+        padding: 15px;
+    }
+    
+    .syllabi-table {
+        font-size: 12px;
+    }
+    
+    .syllabi-table th,
+    .syllabi-table td {
+        padding: 10px 8px;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+}
